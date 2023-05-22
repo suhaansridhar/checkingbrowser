@@ -1,6 +1,43 @@
 *{
-  color: black;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.root--layout--container{
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar--container{
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: rgb(34, 34, 141);
+}
+
+.navbar--container div h1{
+  text-decoration: underline;
+  text-decoration-color: red;
+  padding: 0.1rem;
+}
+
+.navbar--container a{
+  text-decoration: none;
+  margin-right: 15px;
+  color: white;
+  padding: 0.6rem;
+}
+
+.navbar--container a.active{
+  background-color: red;
+  padding: 0.6rem;
+  border-radius: 10px;
+}
+
+.component--display--container{
+  color: black;
+  padding: 1rem;
 }

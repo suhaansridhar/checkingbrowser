@@ -1,22 +1,27 @@
-import React from 'react';
+import {createRoutesFromElements, createBrowserRouter, Route, RouterProvider} from 'react-router-dom';
+import RootLayout from './Components/RootLayout';
 import Home from './Components/Home';
 import About from './Components/About';
-import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from 'react-router-dom';
-import RootLayout from './Components/RootLayout';
+import HelpLayout from './Components/HelpLayout';
+import Faq from './Components/Faq';
+import Contact from './Components/Contact';
 
-
-const router = createBrowserRouter(
+const route = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
+    <Route path="/" element={<RootLayout />} >
       <Route index element = {<Home />} />
-      <Route path='/about' element = {<About />} />
+      <Route path='about' element={<About />}/>
+      <Route path='help' element={<HelpLayout />}>
+        <Route path='faq' element={<Faq />} />
+        <Route path='contact' element={<Contact />} />
+      </Route>
     </Route>
   )
 )
 
 const App = () => {
   return (
-    <RouterProvider router={router} />
+    <RouterProvider router={route} />
   )
 }
 
