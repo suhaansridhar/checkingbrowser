@@ -5,6 +5,7 @@ import About from './Components/About';
 import HelpLayout from './Components/HelpLayout';
 import Faq from './Components/Faq';
 import Contact from './Components/Contact';
+import NotFound from './Components/NotFound';
 
 const route = createBrowserRouter(
   createRoutesFromElements(
@@ -15,6 +16,9 @@ const route = createBrowserRouter(
         <Route path='faq' element={<Faq />} />
         <Route path='contact' element={<Contact />} />
       </Route>
+
+
+      <Route path="*" element={<NotFound />} />
     </Route>
   )
 )
